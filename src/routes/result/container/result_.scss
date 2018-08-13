@@ -1,0 +1,261 @@
+.resultfile {
+  font-family: PingFangSC-Medium;
+  // min-height:812px;
+  .am-navbar-light {
+    height: 0.152rem;
+    background-color: #f7f7f7;
+    box-shadow: 0rem 0.001rem 0rem 0rem rgba(0, 0, 0, 0.3);
+    opacity: 0.96;
+    span {
+      font-family: PingFangSC-Medium;
+      font-size: 0.046rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 0.04rem;
+      letter-spacing: 0rem;
+      color: #000000;
+    }
+  }
+  .dashboarddiv {
+    text-align: center;
+    padding: 0.13rem 0;
+    .scoredash {
+      margin-top: 0.1rem;
+      div {
+        span {
+          font-family: PingFangSC-Semibold;
+          font-size: 0.035rem;
+          font-weight: normal;
+          font-stretch: normal;
+          line-height: 0.064rem;
+          letter-spacing: 0rem;
+        }
+        .score {
+          font-style: italic;
+          font-family: Arial-BlackItalic;
+          font-size: 0.173rem;
+          font-weight: 900;
+          font-stretch: normal;
+          line-height: 0.04rem;
+          letter-spacing: 0rem;
+        }
+      }
+    }
+    .chapterName {
+      font-family: PingFangSC-Medium;
+      font-size: 0.04rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 0.064rem;
+      letter-spacing: 0rem;
+      color: #333333;
+      margin-top:0.05rem;
+      div {
+        float: left;
+        width: 33%;
+      }
+      div:first-child {
+        div {
+          width: 0.155rem;
+          height: 0.005rem;
+          opacity: 0.2;
+          float:right;
+          background: linear-gradient(to right, #fff, #34373b);
+          border-radius: 0.003rem;
+          position: relative;
+          top:0.025rem;
+        }
+      }
+      div:last-child {
+        div{
+          width: 0.155rem;
+          height: 0.005rem;
+          background: linear-gradient(to right, #34373b, #fff);
+          border-radius: 0.003rem;
+          opacity: 0.2;
+          position: relative;
+          top:0.025rem;
+        }
+      }
+    }
+  }
+
+  // container
+  .container {
+    margin-top: 0.04rem;
+    margin-bottom: 0.15rem;
+    .correctanderror {
+      overflow: hidden;
+      width: 0.84rem;
+      font-family: Arial-BoldMT;
+      font-size: 0.037rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 0.064rem;
+      letter-spacing: 0rem;
+      color: #505050;
+      margin: 0 auto;
+      div {
+        float: left;
+        width: 0.4rem;
+        text-align: center;
+        .correct {
+          color: #57d37f;
+        }
+        .error {
+          color: #de3228;
+        }
+        span {
+          padding-left: 0.02rem;
+        }
+      }
+      div:nth-child(2) {
+        width: 0.04rem;
+        color: #d1c7a9;
+        font-size: 0.01rem;
+      }
+    }
+    .correctRate {
+      margin: 0 auto;
+      width: 0.85rem;
+      margin-top: 0.14rem;
+      font-family: PingFangSC-Medium;
+      font-size: 0.04rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 0.064rem;
+      letter-spacing: 0rem;
+      color: #333333;
+      span:first-child {
+        padding-right: 0.03rem;
+      }
+    }
+    .ratewithfield {
+      margin-top: 0.08rem;
+      .fielditem {
+        height: 0.067rem;
+        margin: 0 auto;
+        float: left;
+        text-align: center;
+        box-sizing: border-box;
+        .rate {
+          height: 0.05rem;
+          i {
+            font-family: Arial-BlackItalic;
+            font-size: 0.069rem;
+            font-weight: 900;
+            font-stretch: normal;
+            line-height: 0.04rem;
+            letter-spacing: 0rem;
+            color: #34373b;
+            padding-right: 0.01rem;
+          }
+          span {
+            font-family: Arial-BlackItalic;
+            font-size: 0.029rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.04rem;
+            letter-spacing: 0rem;
+            color: #333333;
+          }
+        }
+        .fieldname {
+          height: 0.05rem;
+          font-family: PingFangSC-Medium;
+          font-size: 0.032rem;
+          font-weight: normal;
+          font-stretch: normal;
+          line-height: 0.064rem;
+          letter-spacing: 0rem;
+          color: #999999;
+        }
+      }
+    }
+    .ratewithfield:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    // 考试介绍
+    .introduction {
+      width: 0.868rem;
+      padding:0.03rem;
+      margin: 0 auto;
+      margin-top: 0.1rem;
+      background-color: #ebebeb;
+      border-radius: 0.011rem;
+
+      font-family: PingFangSC-Medium;
+      font-size: 0.035rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 0.056rem;
+      letter-spacing: 0rem;
+      color: #666666;
+    }
+  }
+  // 下面的button
+  .bottomButton {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.3s;
+    z-index: 10;
+    font-size: 0.045rem;
+    font-weight: normal;
+    font-stretch: normal;
+    text-align: center;
+    .am-button {
+      border-radius: 0;
+    }
+    .seeAllTest{
+      font-family: PingFangSC-Medium;
+      font-size: 0.037rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 0.064rem;
+      letter-spacing: 0rem;
+      color: #736b53;
+      margin-bottom: 0.08rem;
+    }
+    .seeAllTest:active{
+      color:#e0301e
+    }
+  }
+  .nofull {
+    .am-button {
+      width: 0.932rem;
+      margin: 0 auto;
+      margin-top:0.1rem
+    }
+  }
+  .disabled {
+    bottom: -0.15rem;
+    transition: all 0.4s;
+  }
+  .excellent {
+    .ant-progress-circle-path {
+      stroke: #57d37f;
+    }
+    .scoredash {
+      color: #57d37f;
+    }
+  }
+  .good {
+    .ant-progress-circle-path {
+      stroke: #57d37f;
+    }
+    .scoredash {
+      color: #57d37f;
+    }
+  }
+  .failed {
+    .ant-progress-circle-path {
+      stroke: #de3228;
+    }
+    .scoredash {
+      color: #de3228;
+    }
+  }
+}

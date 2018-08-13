@@ -1,0 +1,294 @@
+.questionfile {
+  font-family: PingFangSC-Medium;
+  .am-navbar-light {
+    height: 0.152rem;
+    background-color: #f7f7f7;
+    box-shadow: 0rem 0.001rem 0rem 0rem rgba(0, 0, 0, 0.3);
+    opacity: 0.96;
+    span {
+      font-family: PingFangSC-Medium;
+      font-size: 0.046rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 0.04rem;
+      letter-spacing: 0rem;
+      color: #000000;
+    }
+  }
+  // .am-steps {
+  //   background: #dec7a9;
+  //   padding-top: 0.03rem;
+  //   padding-bottom: 0.02rem;
+  //   .icon_step {
+  //     width: 0.06rem;
+  //     height: 0.06rem;
+  //     border-radius: 50%;
+  //     background: #ddd;
+  //     font-size: 0.03rem;
+  //     line-height: 0.06rem;
+  //     color: #fff;
+  //   }
+  //   .current {
+  //     background: #fff;
+  //     color: #d1c7a9;
+  //   }
+  //   .am-steps-item-finish .am-steps-item-tail:after {
+  //     background: #fff;
+  //   }
+  // }
+  // 中间5个
+  .bar {
+    background: #f9f9fd;
+    overflow: hidden;
+    height: 0.14rem;
+    .bar-item {
+      float: left;
+      width: 0.25rem;
+      padding: 0.01rem 0;
+      box-sizing: border-box;
+      div {
+        box-sizing: border-box;
+        text-align: center;
+      }
+      div:first-child {
+        height: 0.05rem;
+        padding-top: 0.02rem;
+        color: #34373b;
+        font-size: 0.032rem;
+      }
+      div:nth-child(2) {
+        height: 0.02rem;
+        border-right: 1px solid #ccc;
+      }
+      div:last-child {
+        height: 0.05rem;
+        color: #bdbdbd;
+        font-size: 0.029rem;
+        font-family: PingFangSC-Semibold;
+      }
+    }
+    .bar-item:last-child {
+      div:nth-child(2) {
+        border: 0;
+      }
+    }
+  }
+
+  // 内容
+  .container {
+    margin-bottom: 0.15rem;
+    margin-top: 0.05rem;
+    .title {
+      margin-left: 0.03rem;
+      width: 0.91rem;
+      font-family: PingFangSC-Semibold;
+      font-size: 0.032rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 0.04rem;
+      letter-spacing: 0rem;
+      color: #cccccc;
+      margin-top: 0.092rem;
+    }
+    .questionTitle {
+      margin-left: 0.03rem;
+      width: 0.91rem;
+      font-family: PingFangSC-Semibold;
+      font-size: 0.04rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 0.06rem;
+      letter-spacing: 0rem;
+      color: #000000;
+      margin-top: 0.027rem;
+      margin-bottom: 0.055rem;
+      overflow: hidden;
+      div {
+        float: left;
+      }
+      span {
+        background: #d1c7a9;
+        padding: 0 0.01rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 0.032rem;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 0.048rem;
+        letter-spacing: 0rem;
+        color: #ffffff;
+        margin-right: 0.03rem;
+      }
+    }
+    .questionSeleter {
+      width: 100%;
+      .questionItem {
+        font-size: 0.035rem;
+        clear: both;
+        padding-bottom: 0.06rem;
+        padding-top: 0.06rem;
+        margin-bottom: 0.01rem;
+        font-family: PingFangSC-Regular;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 0.048rem;
+        letter-spacing: 0rem;
+        color: #999999;
+        overflow: hidden;
+        div {
+          float: left;
+        }
+        .checkbox {
+          width: 0.15rem;
+          margin-right: 0.01rem;
+          margin-left: 0.03rem;
+          i {
+            border: 1px solid #e1e1e1;
+            // background: #e1e1e1;
+            width: 0.051rem;
+            height: 0.051rem;
+            float: left;
+            border-radius: 50%;
+            margin-left: 0.02rem;
+          }
+          span {
+            float: left;
+            line-height: 0.06rem;
+            margin-left: 0.031rem;
+          }
+          .iconfont {
+            font-size: 0.052rem;
+            line-height: 0.052rem;
+            border-color: transparent;
+          }
+        }
+        div:last-child {
+          width: 0.7rem;
+          padding-top: 0.008rem;
+        }
+      }
+      .correct {
+        background-color: #e5e5e5;
+        color: #34373b;
+        i {
+          color: #57d37f;
+        }
+      }
+      .error {
+        i {
+          color: #de3228;
+        }
+      }
+    }
+    .correctanswer {
+      width: 0.932rem;
+      min-height: 0.477rem;
+      margin: 0 auto;
+      padding: 0.03rem;
+      box-sizing: border-box;
+      margin-top: 0.1rem;
+      .answerTitle {
+        font-family: PingFangSC-Semibold;
+        font-size: 0.032rem;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 0.04rem;
+        letter-spacing: 0rem;
+        height: 0.12rem;
+        line-height: 0.1rem;
+        border-bottom: 0.001rem solid #ccc;
+        .type {
+          color: #fff;
+          margin-right: 0.03rem;
+          padding: 0.01rem 0.02rem;
+        }
+      }
+      .explain {
+        font-family: PingFangSC-Regular;
+        font-size: 0.035rem;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 0.053rem;
+        letter-spacing: 0rem;
+        color: #34373b;
+        padding: 0.04rem 0;
+      }
+    }
+    .answer_correct {
+      background: rgba(87, 211, 127, 0.05);
+      border: solid 0.001rem rgba(87, 211, 127, 0.4);
+      .answerTitle {
+        .type {
+          background: #57d37f;
+        }
+      }
+    }
+    .answer_error {
+      background: rgba(237, 28, 36, 0.05);
+      border: solid 0.001rem rgba(237, 28, 36, 0.4);
+      .answerTitle {
+        .type {
+          background: #ed1c24;
+        }
+      }
+    }
+  }
+  // 下面的button
+  .bottomButton {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.3s;
+    z-index: 10;
+    font-size: 0.045rem;
+    font-weight: normal;
+    font-stretch: normal;
+    .am-button {
+      border-radius: 0;
+    }
+  }
+  .twoinline {
+    box-shadow: 0rem -0.001rem 0.019rem 0rem rgba(204, 204, 204, 0.47);
+    .onebtn {
+      width: 0.5rem;
+      float: left;
+      .am-button {
+        font-family: PingFangSC-Medium;
+        font-size: 0.045rem;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0rem;
+        color: #34373b;
+        .am-icon {
+          position: relative;
+          top: 0.012rem;
+        }
+      }
+      .am-button:before {
+        border: 0 !important;
+        border-radius: 0 !important;
+      }
+    }
+    .onebtn:first-child {
+      .am-button {
+        text-align: left;
+        padding-left: 0.1rem;
+      }
+    }
+    .onebtn:last-child {
+      .am-button {
+        text-align: right;
+        padding-right: 0.1rem;
+      }
+    }
+  }
+  .nofull {
+    .am-button {
+      width: 0.932rem;
+      margin: 0 auto;
+    }
+  }
+  .disabled {
+    bottom: -0.07rem;
+    transition: all 0.4s;
+  }
+}
