@@ -2,7 +2,7 @@
  * @Author: Mao Guijun
  * @Date: 2018-07-18 11:30:06
  * @Last Modified by: Mao Guijun
- * @Last Modified time: 2018-08-16 13:42:03
+ * @Last Modified time: 2018-08-16 13:50:10
  */
 import React, { PureComponent } from 'react'
 import { injectIntl } from 'react-intl'
@@ -245,7 +245,6 @@ class Question extends React.Component {
     const obj = _.groupBy(questionList_, 'interestFieldId')
     let arr = [] // 发送到后端的数据
     let session = { arr: [] }
-    let score = 0
     Object.keys(obj).forEach(key => {
       let count = 0
       console.log(193, obj, obj[key])
@@ -254,7 +253,6 @@ class Question extends React.Component {
           count++
         }
       })
-      score = parseInt((count / obj[key].length) * 100)
       arr.push({
         interestFieldId: key,
         correctRate: parseFloat(count / obj[key].length).toFixed(2)
@@ -265,7 +263,7 @@ class Question extends React.Component {
       })
     })
     const json = {
-      score,
+      score: parseInt((correctList.size / questionList.size) * 100),
       chapterId: sessionStorage.getItem('chapterId'),
       studentId: sessionStorage.getItem('userid')
     }
