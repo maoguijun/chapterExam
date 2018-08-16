@@ -2,7 +2,7 @@
  * @Author: Mao Guijun
  * @Date: 2018-07-18 11:30:06
  * @Last Modified by: Mao Guijun
- * @Last Modified time: 2018-08-10 16:20:32
+ * @Last Modified time: 2018-08-16 12:01:07
  */
 import React, { PureComponent } from 'react'
 import { injectIntl } from 'react-intl'
@@ -20,7 +20,7 @@ import Immutable from 'immutable'
 import { fetchResult } from '../modules/result'
 import { NavBar, Icon, Steps, WingBlank, WhiteSpace, Toast, Modal, Button } from 'antd-mobile'
 import { Progress } from 'antd'
-import '../../../../node_modules/antd/lib/progress/style/index'
+// import '../../../../node_modules/antd/lib/progress/style/index'
 import './result_.scss'
 import { login } from '../../Login/modules/login'
 import { encryptAes, encryptSha256, formatSecondToMinute, toFixed } from '../../../utils/common'
@@ -82,6 +82,7 @@ class Result extends React.Component {
     const {
       intl: { formatMessage }
     } = this.props
+    localStorage.clear()
     postMessage()
   }
   renderfield = () => {

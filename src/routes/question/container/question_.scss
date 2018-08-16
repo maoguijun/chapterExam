@@ -5,6 +5,8 @@
     background-color: #f7f7f7;
     box-shadow: 0rem 0.001rem 0rem 0rem rgba(0, 0, 0, 0.3);
     opacity: 0.96;
+    padding-top: calc(0.1rem + constant(safe-area-inset-top));
+    padding-top: calc(0.1rem + env(safe-area-inset-top));
     span {
       font-family: PingFangSC-Medium;
       font-size: 0.046rem;
@@ -15,27 +17,6 @@
       color: #000000;
     }
   }
-  // .am-steps {
-  //   background: #dec7a9;
-  //   padding-top: 0.03rem;
-  //   padding-bottom: 0.02rem;
-  //   .icon_step {
-  //     width: 0.06rem;
-  //     height: 0.06rem;
-  //     border-radius: 50%;
-  //     background: #ddd;
-  //     font-size: 0.03rem;
-  //     line-height: 0.06rem;
-  //     color: #fff;
-  //   }
-  //   .current {
-  //     background: #fff;
-  //     color: #d1c7a9;
-  //   }
-  //   .am-steps-item-finish .am-steps-item-tail:after {
-  //     background: #fff;
-  //   }
-  // }
   // 中间5个
   .bar {
     background: #f9f9fd;
@@ -132,7 +113,7 @@
         font-stretch: normal;
         line-height: 0.048rem;
         letter-spacing: 0rem;
-        color: #999999;
+        color: #34373b;
         overflow: hidden;
         div {
           float: left;
@@ -163,7 +144,7 @@
         }
         div:last-child {
           width: 0.7rem;
-          padding-top: 0.008rem;
+          padding-top: 0.006rem;
         }
       }
       .correct {
@@ -242,6 +223,8 @@
     font-size: 0.045rem;
     font-weight: normal;
     font-stretch: normal;
+    padding-bottom: calc(0.01rem + constant(safe-area-inset-bottom));
+    padding-bottom: calc(0.01rem + env(safe-area-inset-bottom));
     .am-button {
       border-radius: 0;
     }

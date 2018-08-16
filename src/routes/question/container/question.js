@@ -2,7 +2,7 @@
  * @Author: Mao Guijun
  * @Date: 2018-07-18 11:30:06
  * @Last Modified by: Mao Guijun
- * @Last Modified time: 2018-08-13 11:56:05
+ * @Last Modified time: 2018-08-16 13:42:03
  */
 import React, { PureComponent } from 'react'
 import { injectIntl } from 'react-intl'
@@ -72,13 +72,14 @@ class Question extends React.Component {
     } = this.props
 
     const studentId = sessionStorage.getItem('userid')
+    const chapterId = sessionStorage.getItem('chapterId')
     if (!studentId) {
       this.setState({ animating: false })
       alert(formatMessage({ id: 'plxlogin' }), '', [{ text: 'Ok', onPress: () => postMessage() }])
       return
     }
 
-    dispatch(fetchChapterInfo('chapter24')).then(e => {
+    dispatch(fetchChapterInfo(chapterId)).then(e => {
       if (e.error) {
         message.error(e.error.message)
       } else {
@@ -106,7 +107,7 @@ class Question extends React.Component {
       return
     }
 
-    const json = { limit: tableAll, chapterId: 'chapter24' }
+    const json = { limit: tableAll, chapterId: chapterId, studentId }
     dispatch(fetchQuestion(json)).then(e => {
       this.setState({
         animating: false
@@ -244,6 +245,7 @@ class Question extends React.Component {
     const obj = _.groupBy(questionList_, 'interestFieldId')
     let arr = [] // 发送到后端的数据
     let session = { arr: [] }
+    let score = 0
     Object.keys(obj).forEach(key => {
       let count = 0
       console.log(193, obj, obj[key])
@@ -252,6 +254,7 @@ class Question extends React.Component {
           count++
         }
       })
+      score = parseInt((count / obj[key].length) * 100)
       arr.push({
         interestFieldId: key,
         correctRate: parseFloat(count / obj[key].length).toFixed(2)
@@ -262,7 +265,9 @@ class Question extends React.Component {
       })
     })
     const json = {
-      stuInterestFields: arr
+      score,
+      chapterId: sessionStorage.getItem('chapterId'),
+      studentId: sessionStorage.getItem('userid')
     }
     session = {
       ...session,
@@ -360,10 +365,6 @@ class Question extends React.Component {
           onLeftClick={() => {
             this.backToApp()
           }}
-          // rightContent={[
-          //   <Icon key='0' type='search' style={{ marginRight: '16px' }} />,
-          //   <Icon key='1' type='ellipsis' />
-          // ]}
         >
           <span>{formatMessage({ id: 'appTitle' })}</span>
         </NavBar>
@@ -464,7 +465,7 @@ class Question extends React.Component {
                 textAlign: 'center'
               }}
             >
-              {formatMessage({id:'no_question'})}
+              {formatMessage({ id: 'no_question' })}
             </div>
           )}
           {!questionList.getIn([`${Indexquestion}`, 'isSelected']) && (
@@ -478,6 +479,7 @@ class Question extends React.Component {
             <div className={'bottomButton twoinline'}>
               <div className='onebtn'>
                 <Button
+                  disabled={Indexquestion < 1}
                   onClick={() => {
                     if (Indexquestion < 1) {
                       return

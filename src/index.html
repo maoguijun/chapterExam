@@ -4,7 +4,7 @@
 <head>
   <title>YouPlus</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, viewport-fit=cover , initial-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, viewport-fit=cover">
   <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.js"></script>
   <script>
     (function () {
@@ -34,7 +34,8 @@
       console.log(34, args)
       try {
         sessionStorage.setItem('userid', args[0].slice(1))
-        sessionStorage.setItem('locale', args[1] || 'zh')
+        sessionStorage.setItem('chapterId', args[1])
+        sessionStorage.setItem('locale', args[2] || 'zh')
       } catch (error) {
         console.log(err.message)
       }
@@ -42,7 +43,7 @@
     })()
   </script>
   <style>
-    body {
+    /* body {
       padding-top: constant(safe-area-inset-top);
       padding-top: env(safe-area-inset-top);
       padding-right: constant(safe-area-inset-right);
@@ -51,7 +52,7 @@
       padding-bottom: env(safe-area-inset-bottom);
       padding-left: constant(safe-area-inset-left);
       padding-left: env(safe-area-inset-left);
-    }
+    } */
   </style>
 </head>
 

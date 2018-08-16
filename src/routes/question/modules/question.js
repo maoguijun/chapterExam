@@ -20,7 +20,7 @@ export const fetchQuestion = (json, language) => {
 }
 export const newResult = json => {
   return (dispatch, getState) => {
-    return easyfetch(host, '/s/stuInterestFields', 'post', json)
+    return easyfetch(host, '/s/stuChapterScores', 'post', json)
       .then(e => {
         return dispatch({
           type: NEW_RESULT,

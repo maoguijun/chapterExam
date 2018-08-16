@@ -50,9 +50,7 @@ const language = {
   testingtime: '测试时长',
   question: '题',
   correctRate: '测试准确率',
-  testintroduction1: `恭喜你完成考核，如果你想再复习一遍试题，可以点
-  击下方的重新考核按钮，再次进行试题考核，相信这
-  会更好的帮助你掌握知识`,
+  testintroduction1: `恭喜你完成考核，如果你想再复习一遍试题，可以点击下方的重新考核按钮，再次进行试题考核，相信这会更好的帮助你掌握知识`,
   recommendcourse: '浏览课程推荐',
   excellent: '成绩优秀',
   good: '成绩良好',

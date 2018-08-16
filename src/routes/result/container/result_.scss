@@ -6,6 +6,8 @@
     background-color: #f7f7f7;
     box-shadow: 0rem 0.001rem 0rem 0rem rgba(0, 0, 0, 0.3);
     opacity: 0.96;
+    padding-top: calc(0.1rem + constant(safe-area-inset-top));
+    padding-top: calc(0.1rem + env(safe-area-inset-top));
     span {
       font-family: PingFangSC-Medium;
       font-size: 0.046rem;
@@ -17,27 +19,40 @@
     }
   }
   .dashboarddiv {
-    text-align: center;
+    // text-align: center;
     padding: 0.13rem 0;
-    .scoredash {
-      margin-top: 0.1rem;
-      div {
-        span {
-          font-family: PingFangSC-Semibold;
-          font-size: 0.035rem;
-          font-weight: normal;
-          font-stretch: normal;
-          line-height: 0.064rem;
-          letter-spacing: 0rem;
-        }
-        .score {
-          font-style: italic;
-          font-family: Arial-BlackItalic;
-          font-size: 0.173rem;
-          font-weight: 900;
-          font-stretch: normal;
-          line-height: 0.04rem;
-          letter-spacing: 0rem;
+    // 框框
+    .ant-progress {
+      position: relative;
+      .ant-progress-inner {
+        margin: 0 auto;
+
+        .ant-progress-text {
+          display: block;
+          text-align: center;
+          position: relative;
+          top: -0.26rem;
+          .scoredash {
+            div {
+              span {
+                font-family: PingFangSC-Semibold;
+                font-size: 0.035rem;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 0.064rem;
+                letter-spacing: 0rem;
+              }
+              .score {
+                font-style: italic;
+                font-family: Arial-BlackItalic;
+                font-size: 0.173rem;
+                font-weight: 900;
+                font-stretch: normal;
+                line-height: 0.04rem;
+                letter-spacing: 0rem;
+              }
+            }
+          }
         }
       }
     }
@@ -49,32 +64,33 @@
       line-height: 0.064rem;
       letter-spacing: 0rem;
       color: #333333;
-      margin-top:0.05rem;
+      margin-top: 0.05rem;
       div {
         float: left;
         width: 33%;
+        text-align: center;
       }
       div:first-child {
         div {
           width: 0.155rem;
           height: 0.005rem;
           opacity: 0.2;
-          float:right;
+          float: right;
           background: linear-gradient(to right, #fff, #34373b);
           border-radius: 0.003rem;
           position: relative;
-          top:0.025rem;
+          top: 0.025rem;
         }
       }
       div:last-child {
-        div{
+        div {
           width: 0.155rem;
           height: 0.005rem;
           background: linear-gradient(to right, #34373b, #fff);
           border-radius: 0.003rem;
           opacity: 0.2;
           position: relative;
-          top:0.025rem;
+          top: 0.025rem;
         }
       }
     }
@@ -180,7 +196,7 @@
     // 考试介绍
     .introduction {
       width: 0.868rem;
-      padding:0.03rem;
+      padding: 0.03rem;
       margin: 0 auto;
       margin-top: 0.1rem;
       background-color: #ebebeb;
@@ -206,10 +222,12 @@
     font-weight: normal;
     font-stretch: normal;
     text-align: center;
+    padding-bottom: calc(0.01rem + constant(safe-area-inset-bottom));
+    padding-bottom: calc(0.01rem + env(safe-area-inset-bottom));
     .am-button {
       border-radius: 0;
     }
-    .seeAllTest{
+    .seeAllTest {
       font-family: PingFangSC-Medium;
       font-size: 0.037rem;
       font-weight: normal;
@@ -219,15 +237,15 @@
       color: #736b53;
       margin-bottom: 0.08rem;
     }
-    .seeAllTest:active{
-      color:#e0301e
+    .seeAllTest:active {
+      color: #e0301e;
     }
   }
   .nofull {
     .am-button {
       width: 0.932rem;
       margin: 0 auto;
-      margin-top:0.1rem
+      margin-top: 0.06rem;
     }
   }
   .disabled {
