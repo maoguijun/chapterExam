@@ -1,7 +1,7 @@
 import { push } from 'react-router-redux'
 import Immutable from 'immutable'
 
-export const pathJump = (path) => {
+export const pathJump = path => {
   return dispatch => dispatch(push(path))
 }
 export function getLocale () {
@@ -15,26 +15,26 @@ export function getLocale () {
   return 'zh'
 }
 
-export const ifFin =(role,userInfo) => {
-  if(!userInfo) return
+export const ifFin = (role, userInfo) => {
+  if (!userInfo) return
   let ifFin = false
-  userInfo.roles.map(v=>{
-    if(v.id===role){
+  userInfo.roles.map(v => {
+    if (v.id === role) {
       ifFin = true
     }
   })
   return ifFin
 }
 
-export const deleteSameData=(smallaccount,account)=>{
-  //console.log(smallaccount)
+export const deleteSameData = (smallaccount, account) => {
+  // console.log(smallaccount)
 
-  let _smallacount = smallaccount.toJS();
-  let _account = account.toJS();
-  _smallacount.map(v=>{
-    _account.map((x,i)=>{
-      if(x.id ==v.id){
-        _account.splice(i,1)
+  let _smallacount = smallaccount.toJS()
+  let _account = account.toJS()
+  _smallacount.map(v => {
+    _account.map((x, i) => {
+      if (x.id == v.id) {
+        _account.splice(i, 1)
       }
     })
   })
@@ -53,7 +53,9 @@ export function debounce (func, wait, immediate) {
       timeout = null
       if (!immediate) {
         result = func.apply(context, args)
-        if (!timeout) { context = args = null }
+        if (!timeout) {
+          context = args = null
+        }
       }
     }
   }
@@ -64,7 +66,9 @@ export function debounce (func, wait, immediate) {
     timestamp = +new Date()
     var callNow = immediate && !timeout
 
-    if (!timeout) { timeout = setTimeout(later, wait) }
+    if (!timeout) {
+      timeout = setTimeout(later, wait)
+    }
 
     if (callNow) {
       result = func.apply(context, args)
@@ -73,33 +77,27 @@ export function debounce (func, wait, immediate) {
 
     return result
   }
-};
+}
 
-
-export function formatLang(language=""){
-  //alert(typeof language);
-  //alert(JSON.stringify(language));
-  if(language) {
+export function formatLang (language = '') {
+  // alert(typeof language);
+  // alert(JSON.stringify(language));
+  if (language) {
     if (language.toLowerCase() === 'zh-cn' || language.toLowerCase() === 'cn') {
       language = 'zh'
-    }
-    else if (language.toLowerCase() === 'en-US' || language.toLowerCase() === 'en') {
+    } else if (language.toLowerCase() === 'en-US' || language.toLowerCase() === 'en') {
       language = 'en'
-    }
-    else {
+    } else {
       language = 'all-lan'
     }
   }
-  return language;
+  return language
 }
 
-
-export function takeId(arr){
-  let _idArr=[]
-  arr.map(v=>{
+export function takeId (arr) {
+  let _idArr = []
+  arr.map(v => {
     _idArr.push(v._root.entries[0][1])
   })
   return _idArr
 }
-
-

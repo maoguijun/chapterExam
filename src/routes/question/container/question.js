@@ -2,7 +2,7 @@
  * @Author: Mao Guijun
  * @Date: 2018-07-18 11:30:06
  * @Last Modified by: Mao Guijun
- * @Last Modified time: 2018-08-16 13:50:10
+ * @Last Modified time: 2018-08-31 18:15:32
  */
 import React, { PureComponent } from 'react'
 import { injectIntl } from 'react-intl'
@@ -287,9 +287,6 @@ class Question extends React.Component {
         return
       }
       if (cb) {
-        if (e) {
-          postMessage()
-        }
         cb()
       }
     })
@@ -313,7 +310,7 @@ class Question extends React.Component {
             {
               text: formatMessage({ id: 'saveandleave' }),
               onPress: e => {
-                this.saveResult(window.postMessage, e)
+                this.saveResult(postMessage, e)
               }
             },
             {
