@@ -87,7 +87,7 @@
       div {
         float: left;
       }
-      span {
+      > span:first-child {
         background: #d1c7a9;
         padding: 0 0.01rem;
         font-family: PingFangSC-Semibold;

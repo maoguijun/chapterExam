@@ -2,7 +2,7 @@
  * @Author: Mao Guijun
  * @Date: 2018-07-18 11:30:06
  * @Last Modified by: Mao Guijun
- * @Last Modified time: 2018-08-31 18:15:32
+ * @Last Modified time: 2018-09-11 15:18:52
  */
 import React, { PureComponent } from 'react'
 import { injectIntl } from 'react-intl'
@@ -141,13 +141,22 @@ class Question extends React.Component {
 
   componentDidUpdate (prevProps, prevState) {
     const { questionList, Indexquestion } = this.state
-    questionList.getIn([`${Indexquestion}`, 'choQueOptions']) &&
-      questionList.getIn([`${Indexquestion}`, 'choQueOptions']).forEach(item => {
-        const id = document.getElementById(`selectitem_${item.get('id')}`)
-        if (id) {
-          id.innerHTML = locale === 'en' ? item.get('options_en') : item.get('options_zh')
-        }
-      })
+    if (Indexquestion !== prevState.Indexquestion || questionList !== prevState.questionList) {
+      questionList.getIn([`${Indexquestion}`, 'choQueOptions']) &&
+        questionList.getIn([`${Indexquestion}`, 'choQueOptions']).forEach(item => {
+          const id = document.getElementById(`selectitem_${item.get('id')}`)
+          if (id) {
+            id.innerHTML = locale === 'en' ? item.get('options_en') : item.get('options_zh')
+          }
+        })
+      const title = document.getElementById(`questionTitle_${Indexquestion}`)
+      if (title) {
+        title.innerHTML =
+          locale === 'en'
+            ? questionList.getIn([`${Indexquestion}`, 'content_en'])
+            : questionList.getIn([`${Indexquestion}`, 'content_zh'])
+      }
+    }
   }
 
   onChange = id => {
@@ -395,10 +404,8 @@ class Question extends React.Component {
                     ? formatMessage({ id: 'singleselect' })
                     : formatMessage({ id: 'multiselect' })}
                 </span>
-                {Indexquestion + 1 + '. '}
-                {locale === 'en'
-                  ? questionList.getIn([`${Indexquestion}`, 'content_en'])
-                  : questionList.getIn([`${Indexquestion}`, 'content_zh'])}
+                <span>{Indexquestion + 1 + '. '}</span>
+                <span id={`questionTitle_${Indexquestion}`} />
               </div>
               <div className='questionSeleter'>
                 {questionList.getIn([`${Indexquestion}`, 'choQueOptions']) &&
