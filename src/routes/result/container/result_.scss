@@ -6,8 +6,8 @@
     background-color: #f7f7f7;
     box-shadow: 0rem 0.001rem 0rem 0rem rgba(0, 0, 0, 0.3);
     opacity: 0.96;
-    padding-top: calc(0.1rem + constant(safe-area-inset-top));
-    padding-top: calc(0.1rem + env(safe-area-inset-top));
+    // padding-top: calc(0.1rem + constant(safe-area-inset-top));
+    // padding-top: calc(0.1rem + env(safe-area-inset-top));
     span {
       font-family: PingFangSC-Medium;
       font-size: 0.046rem;
