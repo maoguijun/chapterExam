@@ -10,7 +10,9 @@ export const tableLimit = 20
 export const tableAll = 99999
 export const timetest = 600 // 测试时长
 // export const host = process.env.NODE_ENV === 'development' ? '/api' : '//api.youplusstable.loncus.com'
-export const host = '//api.youplusstable.loncus.com'
+
+// export const host = '//api.youplusstable.loncus.com' //本地测试
+export const host = '//apiyouplustesting.businesstrainingshpwc.com' // 线上测试
 exports.serverurl = '/api'
 exports.fetchState = {
   success: 'success'
